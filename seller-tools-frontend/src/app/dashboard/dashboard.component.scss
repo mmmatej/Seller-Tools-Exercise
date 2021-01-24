@@ -1,0 +1,22 @@
+.dashboard-container {
+  background-color: #0d5089;
+  padding: 50px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  h1 {
+    font-size: 30px;
+    color: white;
+  }
+
+  .mat-paginator {
+    color: white;
+  }
+}
+
+@media (max-width: 500px) {
+  .dashboard-container {
+    padding: 16px;
+  }
+}

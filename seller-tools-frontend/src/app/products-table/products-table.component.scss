@@ -1,0 +1,52 @@
+.table-wrapper {
+  width: fit-content;
+
+  .products-table {
+    .mat-header-row {
+      background-color: #fd603e;
+
+      th {
+        color: white;
+        font-size: 16px;
+        padding: 0 20px;
+      }
+    }
+
+    td {
+      padding: 0 20px;
+      background-color: #f7f7f7;
+      line-height: 0;
+      border-color: rgb(189, 189, 189);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .product-image {
+      padding: 5px 0;
+      width: 100px;
+      height: auto;
+    }
+
+    .product-rate {
+      max-width: 140px;
+      min-width: 80px;
+      img {
+        width: 20%;
+      }
+    }
+
+    .edit-button {
+      cursor: pointer;
+      img {
+        width: 25px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1340px) {
+  td {
+    max-width: 115px;
+  }
+}

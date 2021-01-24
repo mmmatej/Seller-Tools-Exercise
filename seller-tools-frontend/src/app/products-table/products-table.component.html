@@ -1,1 +1,60 @@
-<p>products-table works!</p>
+<div class="table-wrapper">
+  <table mat-table [dataSource]="products" class="products-table">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>#</th>
+      <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef>Image</th>
+      <td mat-cell *matCellDef="let row">
+        <img class="product-image" src="{{ row.image }}" alt="image" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef>Category</th>
+      <td mat-cell *matCellDef="let row">{{ row.category }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="brand">
+      <th mat-header-cell *matHeaderCellDef>Brand</th>
+      <td mat-cell *matCellDef="let row">{{ row.brand }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let row">
+        {{ row.price | currency: row.currency }}
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="reviews">
+      <th mat-header-cell *matHeaderCellDef>Reviews</th>
+      <td mat-cell *matCellDef="let row">{{ row.reviews }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="rating">
+      <th mat-header-cell *matHeaderCellDef>Rating</th>
+      <td mat-cell *matCellDef="let row" class="product-rate">
+        <img src="../../assets/star.svg" alt="rating" *ngFor="let item of [].constructor(row.rating)" />
+        <img src="../../assets/star_empty.svg" alt="rating" *ngFor="let item of [].constructor(5 - row.rating)" />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td class="edit-button" mat-cell *matCellDef="let row">
+        <img src="../../assets/edit.svg" alt="Edit" />
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

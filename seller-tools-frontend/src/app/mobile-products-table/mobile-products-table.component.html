@@ -1,0 +1,39 @@
+<div class="table-wrapper">
+  <table class="mat-table products-table" *ngFor="let product of products">
+    <thead>
+      <tr>
+        <th class="mat-header-cell main" colspan="2">
+          <div class="header-wrapper">
+            <div class="header-text">{{ product.name }}</div>
+            <img class="edit-button" src="../../assets/edit_white.svg" alt="Edit" />
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th class="mat-header-cell">Category</th>
+        <td class="mat-cell">{{ product.category }}</td>
+      </tr>
+      <tr>
+        <th class="mat-header-cell">Brand</th>
+        <td class="mat-cell">{{ product.brand }}</td>
+      </tr>
+      <tr>
+        <th class="mat-header-cell">Price</th>
+        <td class="mat-cell">{{ product.price | currency: product.currency }}</td>
+      </tr>
+      <tr>
+        <th class="mat-header-cell">Reviews</th>
+        <td class="mat-cell">{{ product.reviews }}</td>
+      </tr>
+      <tr>
+        <th class="mat-header-cell">Rating</th>
+        <td class="mat-cell" class="product-rate">
+          <img src="../../assets/star.svg" alt="rating" *ngFor="let item of [].constructor(product.rating)" />
+          <img src="../../assets/star_empty.svg" alt="rating" *ngFor="let item of [].constructor(5 - product.rating)" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

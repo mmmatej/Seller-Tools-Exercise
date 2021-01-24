@@ -1,0 +1,61 @@
+.table-wrapper {
+  width: fit-content;
+
+  .products-table {
+    width: 100%;
+    margin-bottom: 16px;
+
+    .mat-header-cell.main {
+      background-color: #fd603e;
+      color: white;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    .mat-header-cell {
+      background-color: #e4e4e4;
+      font-size: 16px;
+      padding: 15px;
+      width: 40%;
+    }
+
+    td {
+      padding: 0 20px;
+      background-color: #f7f7f7;
+      line-height: 0;
+      max-width: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .product-rate {
+      max-width: 180px;
+
+      img {
+        width: 20%;
+        max-width: 25px;
+      }
+    }
+
+    .header-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      position: relative;
+
+      .header-text {
+        height: fit-content;
+        flex: 2;
+        text-align: center;
+      }
+
+      .edit-button {
+        width: 25px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+    }
+  }
+}

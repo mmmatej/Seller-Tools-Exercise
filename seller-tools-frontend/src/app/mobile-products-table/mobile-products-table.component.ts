@@ -3,11 +3,11 @@ import { Component, Input } from '@angular/core';
 import { Product } from '../utils/product.model';
 
 @Component({
-  selector: 'products-table',
-  templateUrl: './products-table.component.html',
-  styleUrls: ['./products-table.component.scss']
+  selector: 'mobile-products-table',
+  templateUrl: './mobile-products-table.component.html',
+  styleUrls: ['./mobile-products-table.component.scss']
 })
-export class ProductsTableComponent {
+export class MobileProductsTableComponent {
   displayedColumns: string[] = [
     'id',
     'image',

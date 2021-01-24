@@ -1,4 +1,10 @@
 <div class="dashboard-container">
-  <h1>Products</h1>
-  <products-table [data]="products"></products-table>
+  <div>
+    <h1>Products</h1>
+    <products-table *ngIf="isDesktop; else mobileTable" [products]="products"></products-table>
+    <ng-template #mobileTable>
+      <mobile-products-table [products]="products"></mobile-products-table>
+    </ng-template>
+    <mat-paginator [length]="resultsLength" [pageSize]="itemsPerPage"></mat-paginator>
+  </div>
 </div>
